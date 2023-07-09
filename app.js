@@ -2,6 +2,7 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path');
 
 const router = require("./routes/routing");
 
@@ -32,13 +33,13 @@ app.use((req, res, next) => {
 
 app.use("/api", router);
 
+app.use(express.static("veg_fe/dist/m-cart"));
+app.get("*", (req, res) => {
+  res.sendFile(
+    path.resolve(__dirname, "veg_fe", "dist","m-cart","index.html")
+);
+});
 
 app.listen(process.env.PORT || 3000,()=>{
   console.log(`Server running @ ${process.env.PORT||3000}`);
 })
-  app.use(express.static("veg_fe/dist/m-cart"));
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.resolve(__dirname, "veg_fe", "dist","m-cart","index.html")
-  );
-  });
