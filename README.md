@@ -1,4 +1,3 @@
-# Veggies-NM
 # Veggie Market
 
 Veggie Market is a web application that aims to provide a convenient platform for users to browse and purchase a wide variety of fresh vegetables and fruits online.
