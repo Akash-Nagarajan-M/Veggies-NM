@@ -8,10 +8,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginComponent } from './login/login.component';
 import { FaqComponent } from './faq/faq.component';
 import { RegisterComponent } from './register/register.component';
+import { MyOrdersComponent } from './my-orders/my-orders.component';
 
 @NgModule({
     imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, AppRoutingModule],
-    declarations: [AppComponent, WelcomeComponent, LoginComponent,FaqComponent, RegisterComponent],
+    declarations: [AppComponent, WelcomeComponent, LoginComponent,FaqComponent, RegisterComponent, MyOrdersComponent],
     providers: [],
     bootstrap: [AppComponent]
 })

@@ -1,12 +1,12 @@
 <div class="container container-styles">
-	<div class="col-xs-7 col-xs-offset-3">
+	<div class="col-xs-8 col-xs-offset-3">
 		<div class="panel panel-primary">
 			<div class="panel-heading">Login</div>
 			<div class="panel-body padding">
 				<form class="form-horizontal" [formGroup]="loginForm">
 					<div class="form-group" >
 						<label for="name" class="col-xs-4 control-label" style="text-align:left">User Name</label>
-						<div class="col-xs-8">
+						<div class="col-xs-6">
 							<input type="text" class="form-control" [ngClass]="{'valid':loginForm.controls['userName'].valid, 'invalid':loginForm.controls['userName'].invalid && !loginForm.controls['userName'].pristine}" formControlName="userName">
 							<div *ngIf="loginForm.controls['password'].errors && loginForm.controls['userName'].dirty">
 							<div *ngIf="loginForm.controls['userName'].errors?.['required']" style="color:red">UserName is required
@@ -16,12 +16,17 @@
 					</div>
 					<div class="form-group">
 						<label for="password" class="col-xs-4 control-label" style="text-align:left">Password</label>
-						<div class="col-xs-8">
+						<div class="col-xs-6">
 							<input [type]=" showPassword ? 'text' : 'password' " class="form-control" [ngClass]="{'valid':loginForm.controls['password'].valid, 'invalid':loginForm.controls['password'].invalid && !loginForm.controls['password'].pristine}" formControlName="password" >
+							
 							<div *ngIf="loginForm.controls['password'].errors && loginForm.controls['password'].dirty">
 							<div *ngIf="loginForm.controls['password'].errors?.['required']" style="color:red">Password is required
 							</div>
 						</div>
+						
+						</div>
+						<div class="col-xs-1">
+							<button class="btn" (click)='showpass()'> <img src="../../assets/imgs/eye-slash-solid.svg" style="width:20px;" id="eye"></button>
 						</div>
 					</div>
 					<div *ngIf="!valid" class="error">Invalid Credentials...Please try again...</div>
@@ -29,7 +34,7 @@
 					<div class="form-group">
 						<span class="col-xs-2"></span>
 						<div class="col-xs-3">
-							<button class="btn" (click)='showpass()'> <img src="../../assets/imgs/eye-slash-solid.svg" style="width:20px;" id="eye"></button>
+							<!-- <button class="btn" (click)='showpass()'> <img src="../../assets/imgs/eye-slash-solid.svg" style="width:20px;" id="eye"></button> -->
 						</div>
 						<div class="col-xs-3">
 							<button (click)="onSubmit()" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>

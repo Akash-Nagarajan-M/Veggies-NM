@@ -4,7 +4,7 @@ import { ProductService } from '../product.service';
 import { Cart } from '../cart/Cart';
 import { Product } from '../product';
 import { LoginService } from 'src/app/login/login.service';
-
+import { MyordersService } from '../../my-orders/myorders.service'
 @Component({
     templateUrl: 'product-list.component.html',
     styleUrls: ['product-list.component.css']
@@ -12,11 +12,13 @@ import { LoginService } from 'src/app/login/login.service';
 export class ProductListComponent implements OnInit, AfterViewInit {
     chkman: any = [];
     chkmanos: any = [];
+    orders: any = [];
     rate: number = 0;
     pageTitle = 'GoVeggies';
     imageWidth = 200;
     imageHeight = 200;
     imageMargin = 12;
+    prodtype = this.productService.producttype;
     showImage = false;
     listFilter: string = '';
     errorMessage: string = '';
@@ -34,15 +36,12 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     loginVal!: ElementRef;
     @ViewChild('welcomeEl')
     welcomeVal!: ElementRef;
-
-    // Fetches the products data from service class
-    constructor(private productService: ProductService, private loginService: LoginService, private renderer: Renderer2) {
+    constructor(private productService: ProductService, private loginService: LoginService, private renderer: Renderer2,
+        private orderService : MyordersService) {
     }
     ngAfterViewInit() {
         this.loginVal = this.loginService.loginElement;
-        // console.log(this.loginVal);
         this.welcomeVal = this.loginService.welcomeElement;    
-        // console.log(this.welcomeVal);
         this.renderer.setProperty(this.loginVal.nativeElement, 'innerText', 'Logout');
        this.renderer.setStyle(this.welcomeVal.nativeElement, 'display', 'inline');
         let welcomeText="Welcome "+this.loginService.username+ "  "; 
@@ -51,8 +50,9 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 
     }
     ngOnInit() {
-
-        this.orderId++;
+        this.orderService.getOrders().subscribe({
+            next:orders=>this.orders = orders
+        });
 
         this.productService.getProducts()
             .subscribe({
@@ -82,11 +82,6 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         name.checked = (name.checked) ? false : true;     
         this.products = this.chkmanosprice;
     }
-
-
-    // Invoked when user clicks on Add to Cart button
-    // Adds selected product details to service class variable 
-    // called selectedProducts
     addCart(id: number) {
         this.cart = new Cart();
         this.selectedItems += 1;
@@ -95,12 +90,17 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         const product = this.productService.products.filter((currProduct: any) => currProduct.productId === id)[0];
         this.total += product.price;
         sessionStorage.setItem('selectedItems', this.selectedItems);
-        const sp = this.productService.selectedProducts.filter((currProduct: any) => currProduct.productId === id)[0];
-        if (sp) {
-            const index = this.productService.selectedProducts.findIndex((currProduct: any) => currProduct.productId === id);
-            this.productService.selectedProducts[index].quantity += 1;
-            this.productService.selectedProducts[index].totalPrice += product.price;
-        } else {
+        // const sp = this.productService.selectedProducts.filter((currProduct: any) => currProduct.productId === id)[0];
+        // if (sp) {
+        //     const index = this.productService.selectedProducts.findIndex((currProduct: any) => currProduct.productId === id);
+        //     this.productService.selectedProducts[index].quantity += 1;
+        //     this.productService.selectedProducts[index].totalPrice += product.price;
+        // } 
+        // else {
+            
+           
+            this.orderId=this.orders.length+1;
+           
             this.cart.orderId = 'ORD_' + this.orderId;
             this.cart.productId = id;
             this.cart.userId = sessionStorage.getItem('username') + '';
@@ -112,7 +112,7 @@ export class ProductListComponent implements OnInit, AfterViewInit {
             this.productService.selectedProducts.push(this.cart);
             sessionStorage.setItem('selectedProducts', JSON.stringify(this.productService.selectedProducts));
             this.orderId++;
-        }
+        // }
     }
 
     // Search box functionality
@@ -125,12 +125,11 @@ export class ProductListComponent implements OnInit, AfterViewInit {
         }
     }
 
-    // Invoked when a tab (Tablets/Mobiles) is clicked
-    // Displays tablets or mobiles data accordingly
     tabselect(producttype: string) {
 
 
         this.products = [];
+        this.prodtype=producttype;
         this.productService.producttype = producttype;
         this.productService.getProducts().subscribe({
             next: products => {        
@@ -142,8 +141,6 @@ export class ProductListComponent implements OnInit, AfterViewInit {
       
     }
 
-    // Invoked when user select an option in sort drop down
-    // changes the sortoption value accordingly
     onChange(value: string) {
         this.sortoption = value;
     }

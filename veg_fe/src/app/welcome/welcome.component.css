@@ -3,16 +3,23 @@
 }
 *{
     font-size: large;
+	
+}
+.card{
+	background-color: rgba(128, 128, 128, 0.075);
 }
 .logo-styles{
 	width: 50px; 
 	font-size: 50px; 
-	color: #ff0080
+	color:greenyellow;
+}
+#div1{
+	background-color:#337ab7;
 }
 
 .title-styles{
 	text-align: center; 
-	color: #ff0080; 
+	color: rgb(82, 220, 54); 
 	font-size: 40px
 }
 

@@ -3,7 +3,7 @@ const veg = arr[1];
 exports.getVegetables = async(req,res) =>{
     try{
         const veggies = await veg.find({'type':"vegetable"},{__id : 0, __v:0});
-        console.log(veggies);
+        
         if (veggies.length > 0) {
             return res.status(200).json(veggies);
         }
@@ -24,7 +24,7 @@ exports.getVegetables = async(req,res) =>{
 exports.getFruits = async(req,res) =>{
     try{
         const veggies = await veg.find({"type":"fruit"},{__id : 0, __v:0});
-        console.log(veggies);
+        
         if (veggies.length > 0) {
             return res.status(200).json(veggies);
         }
@@ -46,7 +46,7 @@ exports.getFruits = async(req,res) =>{
 exports.getAll = async(req,res) =>{
     try{
         const veggies = await veg.find({},{__id : 0, __v:0});
-        console.log(veggies);
+        
         if (veggies.length > 0) {
             return res.status(200).json(veggies);
         }

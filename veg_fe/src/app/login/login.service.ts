@@ -1,4 +1,4 @@
-import { ElementRef, Injectable } from '@angular/core';
+import { ElementRef, Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -12,12 +12,19 @@ export class LoginService {
     username = '';
     loginElement!: ElementRef;
     welcomeElement!: ElementRef;
-
-    constructor(private http: HttpClient) {}
+    backendURL !:string;
+    constructor(private http: HttpClient) {
+        if(isDevMode()){
+            this.backendURL='http://localhost:5000';
+        }
+        else{
+            this.backendURL='';
+        }
+    }
 
     // Makes a get request to the backend to fetch users data
     getUsers(): Observable<Login[]> {
-        return this.http.get<Login[]>('http://localhost:3000/getUsers').pipe(catchError(this.handleError)  );
+        return this.http.get<Login[]>(this.backendURL+'/api/getUsers').pipe(catchError(this.handleError)  );
     }
 
     // Invoked if an error is thrown in the get request

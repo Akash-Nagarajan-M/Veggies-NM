@@ -1,3 +1,4 @@
+
 thead {
 	color: #337AB7;
 }
@@ -50,7 +51,21 @@ thead {
 	top: 50px; 
 	width:100%
 }
-
+.panel-body{
+	background-color: rgba(128, 128, 128, 0.075);
+}
+.carouselpos{
+	background-color: rgba(128, 128, 128, 0.311);
+}
+.carousel-indicators li{
+	border:2px solid rgba(15, 14, 14, 0.123);
+}
+li .active{
+	background-color: #8fea90;
+}
+li .active:hover{
+	background-color: white;
+}
 .searchboxpos{
 	position:relative;
 	top:10px;

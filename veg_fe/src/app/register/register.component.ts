@@ -27,7 +27,9 @@ export class RegisterComponent implements OnInit {
       userName: [ this.register.userName, Validators.required],
       password: [ this.register.password, Validators.required],
       name: [ this.register.name, Validators.required],
-      email: [ this.register.email, Validators.required],
+      email: [ this.register.email,
+        Validators.required,
+        Validators.email],
       address: [ this.register.address, Validators.required]
     }) 
   }
@@ -44,7 +46,6 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/register']);
      }
      else{
-       console.log(this.register);
        this.registerservice.addUsers({
         name:this.registrationform.controls['name'].value,
         email:this.registrationform.controls['email'].value,

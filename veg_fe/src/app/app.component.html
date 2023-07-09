@@ -2,10 +2,10 @@
 	<nav class='navbar navbar-default navbar-fixed-top'>
 		<div class='container-fluid'>
 			<div class="navbar-brand" [routerLink]="['welcome']" title="welcome">GoVeggies</div>
-			<div class="navbar-brand" [routerLink]="['products']"  title="Order" >Order Veggies</div>
+			<div class="navbar-brand" [routerLink]="['products']"  title="Order" >VEGGIES</div>
 			<div class="navbar-brand" [routerLink]="['faq']"  title="faq">FAQ</div>
-	
-			<div class="panel-heading text-right" style="display:none;padding:0px;position:relative;left: 150px;" #welcomeEl></div>
+			<div class="navbar-brand" [routerLink]="['myOrders']" title="MyOrders">My Orders</div>
+			<div class="panel-heading text-right" style="display:none;padding:0px;position:relative;left: 100px;" #welcomeEl></div>
 			<div class="btn-nav">
 				&nbsp;<a *ngIf="activelog"  class="btn btn-primary btn-small navbar-btn" (click)="login()"  #loginEl>{{loginTitle}}</a>
 			</div>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators'
@@ -12,29 +12,35 @@ export class ProductService {
     products: any = [];
     producttype='vegetable';
     username: string = '';
-
+    backendURL !:string;
 
     // Fetches selectedProducts data from the sessionStorage
     constructor(private http: HttpClient) {
         if (sessionStorage.getItem('selectedProducts')) {
             this.selectedProducts = JSON.parse(sessionStorage.getItem('selectedProducts') + '');
         }
+        if(isDevMode()){
+            this.backendURL='http://localhost:5000';
+        }
+        else{
+            this.backendURL='';
+        }
     }
 
     // Makes a get request to backend to fetch products data
     getProducts(): Observable<Product[]> {
         if(this.producttype==='all'){
-            return this.http.get<Product[]>('http://localhost:3000/getAll').pipe(
+            return this.http.get<Product[]>(this.backendURL+'/api/getAll').pipe(
                 tap((products) => this.products= products ),
                 catchError(this.handleError));
             
         }
         if (this.producttype === 'vegetable') {
-            return this.http.get<Product[]>('http://localhost:3000/getVegetables').pipe(
+            return this.http.get<Product[]>(this.backendURL+'/api/getVegetables').pipe(
                 tap((products) => this.products = products),
                 catchError(this.handleError));
         } else if (this.producttype === 'fruit') {
-            return this.http.get<Product[]>('http://localhost:3000/getFruits').pipe(
+            return this.http.get<Product[]>(this.backendURL+'/api/getFruits').pipe(
                 tap((products) => this.products = products),
                 catchError(this.handleError));
         }

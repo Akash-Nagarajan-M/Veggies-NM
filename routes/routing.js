@@ -12,4 +12,5 @@ router.get('/getAll',veggiesHandler.getAll);
 router.get('/getRegisters',registerHandler.getReg);
 router.post('/addRegisters',registerHandler.addReg);
 router.post('/addOrders',orderHandler.addOrder);
+router.get('/getOrders',orderHandler.getOrder);
 module.exports=router;

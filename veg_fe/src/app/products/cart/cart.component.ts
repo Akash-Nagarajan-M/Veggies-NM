@@ -68,8 +68,8 @@ export class CartComponent {
         this.submit = false;
         // console.log(this.productService.selectedProducts);
         this.cartserv.addOrders({
-            order:this.productService.selectedProducts
-            
+            order:this.productService.selectedProducts,
+            email:sessionStorage.getItem('email')
         }).subscribe({
         next:()=>this.submit=false
         });

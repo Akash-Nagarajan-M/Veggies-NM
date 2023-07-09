@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/veggies').then(()=>{
+mongoose.connect('mongodb+srv://akash:akash@cluster0.a8nabs9.mongodb.net/veggies?retryWrites=true&w=majority').then(()=>{
     console.log("db connection established...");
 });
 const userSchema=new mongoose.Schema({
@@ -9,6 +9,10 @@ const userSchema=new mongoose.Schema({
         required:[true,'Required Field']
     },
     password:{
+        type:String,
+        required:[true,'Required Field']
+    },
+    email:{
         type:String,
         required:[true,'Required Field']
     }

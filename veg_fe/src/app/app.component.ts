@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
     activelog=true;
     constructor(private loginService: LoginService, private router: Router, private renderer: Renderer2
         ) {
-               
+            
     }
 ngOnInit(){}
     ngAfterViewInit() {
@@ -31,15 +31,18 @@ ngOnInit(){}
     // Navigates to login page
     login() {
         const value = this.loginVal.nativeElement.innerText;
-        this.loginTitle='';
+        // this.loginTitle='';
+
         if (value === 'Login') {
             
            this.router.navigate(['/login']);
         } 
         else if (value === 'Logout') {
-            
+            sessionStorage.setItem("username","");
+            sessionStorage.setItem("email","");
             sessionStorage.clear();
-            // localStorage.clear();
+            
+            localStorage.clear();
             
             this.loginTitle = 'Login';
             this.renderer.setProperty(this.loginVal.nativeElement, 'innerText', 'Login');

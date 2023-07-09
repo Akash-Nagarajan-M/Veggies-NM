@@ -1,4 +1,4 @@
-<div class="container" style="margin:100px;"></div>
+<div class="container" style="margin:50px;"></div>
 <div class="container container-styles">
 	<div class="panel panel-primary">
 		<div class="panel-heading">Registration</div>
@@ -11,14 +11,17 @@
 						<div *ngIf="registrationform.controls['name'].errors?.['required']" style="color:red">
 							Name is required
 						</div>
+					</div>
 				</div>
-				<br/>
 				<div class="form-group" >
 					<label for="email" class="col-xs-4 control-label" style="text-align:left">Email</label>
 					<div class="col-xs-8">
-						<input type="text" class="form-control" [ngClass]="{'valid':registrationform.controls['email'].valid, 'invalid':registrationform.controls['email'].invalid && !registrationform.controls['email'].pristine}" formControlName="email">
+						<input type="email" class="form-control" [ngClass]="{'valid':registrationform.controls['email'].valid, 'invalid':registrationform.controls['email'].invalid && !registrationform.controls['email'].pristine}" formControlName="email">
 						<div *ngIf="registrationform.controls['email'].errors?.['required']" style="color:red">
 							Email is required
+						</div>
+						<div *ngIf="registrationform.controls['email'].errors?.['email']" style="color:red">
+							Email is Invalid	
 						</div>
 					
 					
@@ -50,11 +53,14 @@
 				<div class="form-group">
 					<label for="address" class="col-xs-4 control-label" style="text-align:left">Address</label>
 					<div class="col-xs-8">
-						<input type="text" class="form-control" [ngClass]="{'valid':registrationform.controls['Address'].valid, 'invalid':registrationform.controls['Address'].invalid && !registrationform.controls['Address'].pristine}" formControlName="Address">
-						<div *ngIf="registrationform.controls['Address'].errors?.['required']" style="color:red">
+						<input type="text" class="form-control" [ngClass]="{'valid':registrationform.controls['address'].valid, 'invalid':registrationform.controls['address'].invalid && !registrationform.controls['address'].pristine}" formControlName="address" >
+						<div *ngIf="registrationform.controls['address'].errors?.['required']" style="color:red">
+						<!-- <input type="text" class="form-control" [ngClass]="{'valid':registrationform.controls['Address'].valid, 'invalid':registrationform.controls['Address'].invalid && !registrationform.controls['Address'].pristine}" formControlName="Address">
+						<div *ngIf="registrationform.controls['Address'].errors?.['required']" style="color:red"> -->
 							Address is required
 						</div>
 					</div>
+					
 				</div>
 				<div *ngIf="!valid" class="error">Invalid Credentials...Please try again...</div>
 				<br />
@@ -66,7 +72,7 @@
 				<div class="form-group">
 					<span class="col-xs-4"></span>
 					<div class="col-xs-3">
-						<button (click)="onSubmit()" class="btn btn-primary" [disabled]="!registrationform.valid">Register</button>
+						<button (click)="onSubmit()" class="btn btn-primary" >Register</button>
 					</div>		
 				</div>
 				<br/>
@@ -74,7 +80,7 @@
 					<span class="col-xs-4"></span>
 					<a [routerLink]="['/login']" href="/login">Go back to login</a>
 				</div>
-				</div>
+			
 			</form>
 		</div>
 	</div>

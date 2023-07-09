@@ -1,14 +1,20 @@
 .container-styles{
 	position: relative; 
 	top: 180px;
-	width:50%
+	width:50%;
+  
 }
 
+.panel-body{
+  background-color: rgba(128, 128, 128, 0.075);
+}
 .padding{
   padding-bottom:0px;
   margin-bottom:0px;
 }
-
+.panel-heading{
+  background-color: #a94442;
+}
 .link-underline{
    color:#337ab7;
     text-decoration: underline;

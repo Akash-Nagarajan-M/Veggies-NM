@@ -1,0 +1,36 @@
+<!-- <button (click)="fetchOrders()" style="margin-top:70px;position: relative;left:40%;"  class="btn btn-primary">FETCH MY ORDERS</button> -->
+<div  style="margin-top:100px;" class='panel panel-primary panelpos'>
+	<div class='panel-heading'>MyOrders</div>
+	<div class='panel-body'>
+		<h1>Showing {{orders1.length}} entries</h1>
+		<table class='table' *ngIf='orders1 && orders1.length'
+			style="margin-bottom: 0px; margin-right: 0px">
+			<thead>
+				<tr class="tableheadercolor">
+					<th class="center">Order Id</th>
+					<th class="center">Product Id</th>
+                    <th class="center">Product Name</th>
+                    <th class="center">Quantity</th>
+					<th class="center">Price</th>
+					<th class="center">Total Price</th>
+                    <th class="center">Date</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let order of orders1; let i=index'>
+                    <td class="center">{{order.orderId}}</td>
+                    <td class="center">{{order.productId}}</td>
+					<td class="center">{{order.productName}}</td>
+					<td class="center">{{order.quantity}}</td>
+					<td class="center">{{order.price | currency:"&#8377;" }}</td>
+					<td class="center">{{order.totalPrice | currency:"&#8377;"}}</td>
+                    <td class="center">{{order.dateOfPurchase}}</td>
+				</tr>
+				
+				
+			</tbody>
+		</table>
+</div>
+
+</div>
