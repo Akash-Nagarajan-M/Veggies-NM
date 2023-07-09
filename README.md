@@ -20,7 +20,7 @@ node app.js
 
 ## Usage
 
-1. Create an account or log in to your existing account.
+1. Create an account or log in to your existing account. (Demo account=> username:admin , passsword: admin )
 2. Browse through the different vegetable categories and explore the available options.
 3. Select the desired vegetables and add them to your cart.
 4. Proceed to the checkout page to review your order and provide the necessary delivery details.
