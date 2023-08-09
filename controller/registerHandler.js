@@ -6,6 +6,7 @@ exports.getReg = async(req,res) =>{
         const registers = await reg.find({},{__id : 0, __v:0});
         
         if (registers.length > 0) {
+            console.log(registers);
             return res.status(200).json(registers);
         }
         else {
@@ -25,12 +26,13 @@ exports.getReg = async(req,res) =>{
 exports.addReg = async(req,res) =>{
     try{
         const aReg=req.body;
-        
+        console.log(aReg);
         const aUser = new user({
             "userName":aReg['userName'],
             "password":aReg['password'],
             "email":aReg['email'],
         });
+        console.log(aUser);
         const newReg = await reg.create(aReg);
         const newUser = await user.create(aUser);
         res.status(201).json({

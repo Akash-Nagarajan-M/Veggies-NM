@@ -4,7 +4,7 @@ mongoose.connect('mongodb+srv://akash:akash@cluster0.a8nabs9.mongodb.net/veggies
     console.log("db connection established...");
 });
 const userSchema=new mongoose.Schema({
-    username:{
+    userName:{
         type:String,
         required:[true,'Required Field']
     },
