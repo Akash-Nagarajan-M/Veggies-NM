@@ -1,0 +1,132 @@
+[
+	{
+		"productId": 1,
+		"productName": "Tomatoes",
+		"description": "Transported freshly from the farmers place",
+		"price": 20,
+		"imageUrl": "assets/imgs/tomato.jpg",
+        "type": "vegetable"
+	},
+	{
+		"productId": 2,
+		"productName": "Carrot",
+		"description": "A popular sweet-tasting root vegetable, Carrots are narrow and cone shaped.",
+		"price": 40,
+		"imageUrl": "assets/imgs/carrot.jpg",
+        "type":"vegetable"
+	},
+	{
+		"productId": 3,
+		"productName": "Capsicum",
+		"description": "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.",
+		"price": 60,
+		"imageUrl": "assets/imgs/capsicum.jpg",
+        "type":"vegetable"
+		
+	},
+	{
+		"productId": 4,
+		"productName": "Ladies Finger",
+		"description": "Ladies' finger is a green vegetable with a tip at the end and a lighter green head, which is inedible and to be thrown away.",
+		"price": 40,
+		"imageUrl": "assets/imgs/ladies-finger.jpg",
+        "type":"vegetable"
+	},
+	{
+		"productId": 5,
+		"productName": "Cucumber",
+		"description": "With high water content and crunchy flesh, Cucumbers have striped, light to dark green coloured skin that is edible.",
+		"price": 20,
+		"imageUrl": "assets/imgs/cucumber.jpg",
+        "type":"vegetable"
+	},
+	{
+		"productId": 6,
+		"productName": "Onion",
+		"description": "Onion is a vegetable which is almost like a staple in Indian food. This is also known to be one of the essential ingredients of raw salads. They come in different colours like white, red or yellow and are quite in demand in cold salads and hot soups.",
+		"price": 45,
+		"imageUrl": "assets/imgs/onion.jpg",
+        "type":"vegetable"
+	},
+	{
+		"productId": 7,
+		"productName": "Potato",
+		"description": "Potatoes are rich in starch and carbs, which is important for getting energy.",
+		"price": 50,
+		"imageUrl": "assets/imgs/potato.jpg",
+        "type":"vegetable"
+	},
+	{
+		"productId": 8,
+		"productName": "Beans",
+		"description": "Beans are great for metabolism and regulation of the sugar level of blood.",
+		"price": 50,
+		"imageUrl": "assets/imgs/beans.jpg",
+        "type":"vegetable"
+	},
+    
+    {
+        "productId": 9,
+        "productName": "Apple-Shimla",
+        "description": "Apples are one of the healthiest fruits. Rich in vitamin C and dietary fiber which keep our digestive and immune system healthy.",
+        "price": 200,
+        "imageUrl": "assets/imgs/apple-shimla.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 10,
+        "productName": "Banana-Yelaki",
+        "description": "Tiny and small sized, this variety is called Yelakki in Bangalore and Elaichi in Mumbai. Despite its small size, they are naturally flavoured, aromatic and sweeter compared to regular bananas.",
+        "price": 70,
+        "imageUrl": "assets/imgs/banana-yelaki.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 11,
+        "productName": "Pomengranate",
+        "description": "Pomegranate is a rich supplier of soluble and insoluble dietary fibers, vitamin K, C, minerals and B-complex vitamins such as B5, B6.",
+        "price": 220,
+        "imageUrl": "assets/imgs/pomengranate.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 12,
+        "productName": "Orange",
+        "description": "Oranges are a good source of vitamin C and B complex. They lower cholesterol and control blood sugar level.",
+        "price": 300,
+        "imageUrl": "assets/imgs/orange.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 13,
+        "productName": "Watermelon",
+        "description": "Watermelons have excellent hydrating properties with 90% water content.",
+        "price": 100,
+        "imageUrl": "assets/imgs/watermelon.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 14,
+        "productName": "Kiwi",
+        "description": "One Kiwi contains a full day requirement of vitamin C.It is also full of dietry Fibre, Vitamin K, Amino acid,Vitamin B6 and several antioxidants",
+        "price": 200,
+        "imageUrl": "assets/imgs/kiwi.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 15,
+        "productName": "Mosambi",
+        "description": "Mosambis are a good source of vitamin C and potassium and its high water content is known for its cooling properties.",
+        "price": 90,
+        "imageUrl": "assets/imgs/mosambi.jpg",
+        "type":"fruit"
+    },
+    {
+        "productId": 16,
+        "productName": "Papaya",
+        "description": "Papaya is rich in anti-oxidants and phytonutrients that work against free radicals and therefore is said to protect the body from possible heart diseases and cancer.",
+        "price": 50,
+        "imageUrl": "assets/imgs/papaya.jpg",
+        "type":"fruit"
+    }
+]

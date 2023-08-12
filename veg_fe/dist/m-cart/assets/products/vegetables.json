@@ -1,0 +1,59 @@
+[
+	{
+		"productId": 1,
+		"productName": "Tomatoes",
+		"description": "Transported freshly from the farmers place",
+		"price": 20,
+		"imageUrl": "assets/imgs/tomato.jpg"
+	},
+	{
+		"productId": 2,
+		"productName": "Carrot",
+		"description": "A popular sweet-tasting root vegetable, Carrots are narrow and cone shaped.",
+		"price": 40,
+		"imageUrl": "assets/imgs/carrot.jpg"
+	},
+	{
+		"productId": 3,
+		"productName": "Capsicum",
+		"description": "Leaving a moderately pungent taste on the tongue, Green capsicums, also known as green peppers are bell shaped, medium-sized fruit pods.",
+		"price": 60,
+		"imageUrl": "assets/imgs/capsicum.jpg"
+		
+	},
+	{
+		"productId": 4,
+		"productName": "Ladies Finger",
+		"description": "Ladies' finger is a green vegetable with a tip at the end and a lighter green head, which is inedible and to be thrown away.",
+		"price": 40,
+		"imageUrl": "assets/imgs/ladies-finger.jpg"
+	},
+	{
+		"productId": 5,
+		"productName": "Cucumber",
+		"description": "With high water content and crunchy flesh, Cucumbers have striped, light to dark green coloured skin that is edible.",
+		"price": 20,
+		"imageUrl": "assets/imgs/cucumber.jpg"
+	},
+	{
+		"productId": 6,
+		"productName": "Onion",
+		"description": "Onion is a vegetable which is almost like a staple in Indian food. This is also known to be one of the essential ingredients of raw salads. They come in different colours like white, red or yellow and are quite in demand in cold salads and hot soups.",
+		"price": 45,
+		"imageUrl": "assets/imgs/onion.jpg"
+	},
+	{
+		"productId": 7,
+		"productName": "Potato",
+		"description": "Potatoes are rich in starch and carbs, which is important for getting energy.",
+		"price": 50,
+		"imageUrl": "assets/imgs/potato.jpg"
+	},
+	{
+		"productId": 8,
+		"productName": "Beans",
+		"description": "Beans are great for metabolism and regulation of the sugar level of blood.",
+		"price": 50,
+		"imageUrl": "assets/imgs/beans.jpg"
+	}
+]
