@@ -11,10 +11,10 @@ export class RegisterService {
   constructor(private http:HttpClient) {
     if(isDevMode()){
       this.backendURL='http://localhost:5000';
-  }
-  else{
+    }
+    else{
       this.backendURL='';
-  }
+    }
    }
   
   getRegisters(): Observable<Register[]> {
